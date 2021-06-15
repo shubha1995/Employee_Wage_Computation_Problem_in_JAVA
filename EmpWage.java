@@ -9,6 +9,9 @@ public class EmpWage{
 		if(empCheck == Full_Time)
 		{
 			System.out.println("Employee is Present");
+			int Daily_Emp_Wage = Wage_per_hr * Full_Day_hr;
+			System.out.println("Daily Employee Wage is : " + Daily_Emp_Wage);
+			
 		}
 		else
 		{

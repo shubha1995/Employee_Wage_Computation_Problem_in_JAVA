@@ -1,6 +1,8 @@
+
+
 public class EmpWage{
 
-	public static void main(String[] args) {
+	public static void calculateWage() {
 
 		
 		int FullDayHr=8;
@@ -35,10 +37,15 @@ public class EmpWage{
 				break;
 		}
 		 }
-		System.out.println("total wage of a month is");
-		System.out.println(wage);
-		System.out.println(empHr);
-		System.out.println(day);
+		System.out.println("total wage of a month is: " +wage);
+		
+		System.out.println("Employee Hour: "+empHr);
+		System.out.println("Employee Work Day: "+day);
 
 	}
+	public static void main(String[] args) {
+		calculateWage();
+		
+	}
 }
+

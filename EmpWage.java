@@ -1,11 +1,24 @@
+package com.addressbook;
+
 
 public class EmpWage{
+	    int FULL_DAYHR=8;
+	    int PART_TIMEHR=4;
+	    
+	    private final String companyName;
+	    private final int wagePerHr;
+	    private final int maxWorkingDays;
+	    private final int maxWorkingHrs;
+	    private int totalWage;
 
-	public static void calculateWage(String companyName, int wagePerHr, int maxWorkingDays, int maxWorkingHrs) {
-
+	    public EmpWage(String companyName, int wagePerHr, int maxWorkingDays, int maxWorkingHrs) {
+	    	this.companyName = companyName;
+	    	this.wagePerHr = wagePerHr;
+	    	this.maxWorkingDays = maxWorkingDays;
+	    	this.maxWorkingHrs = maxWorkingHrs;
+	    }
+		public void calculateWage() {
 		
-		int FULL_DAYHR=8;
-		int PART_TIMEHR=4;
 		int day=0;
 		int empHr=0;
 		int wage = 0;
@@ -46,11 +59,23 @@ public class EmpWage{
 		System.out.println("Employee Work Day: "+day + "\n");
 
 	}
-	public static void main(String[] args) {
 
-        calculateWage("FlipKart", 50, 20, 200);
-        calculateWage("Amazon", 25, 25, 250);
+	@Override
+		public String toString() {
+			return "EmpWage [companyName=" + companyName + ", wagePerHr=" + wagePerHr + ", maxWorkingDays="
+					+ maxWorkingDays + ", maxWorkingHrs=" + maxWorkingHrs + ", totalWage=" + totalWage + "]";
+		}
+	public static void main(String[] args) {
 		
+		EmpWage flipkart = new EmpWage("Flipkart", 50, 20, 200);
+		EmpWage amazon = new EmpWage("Amazon", 25, 25, 250);
+
+
+        flipkart.calculateWage();
+        System.out.println(flipkart);
+
+        amazon.calculateWage();
+        System.out.println(amazon);
 	}
 }
 
